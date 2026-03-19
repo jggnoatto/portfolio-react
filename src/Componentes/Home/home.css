@@ -79,6 +79,6 @@
         }
 
         .home-content section {
-            margin-bottom: 0px; /* Reduz o espaçamento no mobile */
+            margin-bottom: -100px; /* Reduz o espaçamento no mobile */
         }
     }

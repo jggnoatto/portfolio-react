@@ -76,6 +76,8 @@ button:hover {
         flex-direction: column;
         text-align: center;
         padding: 40px 20px;
+        padding-bottom: 0px !important; /* Remove o respiro de baixo do hero */
+        margin-bottom: -20px !important; /* Puxa o próximo elemento para cima */
         gap: 40px;
     }
 
@@ -95,6 +97,8 @@ button:hover {
 
     .hero-image {
         width: 100%;
+        margin-top: 200px; /* Sobe um pouco a imagem em direção ao texto */
+        margin-bottom: -100px !important;
         margin-right: 0; /* Remove o recuo negativo do desktop */
         max-width: 400px; /* Evita que fique gigante em tablets */
         order: 2; /* Garante que a imagem fique embaixo do texto */
