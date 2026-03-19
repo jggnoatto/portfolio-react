@@ -1,0 +1,1 @@
+import precoCertoLogo from '../../assets/preco-certo-logo.png';

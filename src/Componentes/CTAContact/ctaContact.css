@@ -1,0 +1,39 @@
+.cta-contact {
+    text-align: left; /* Alinha o conteúdo à esquerda conforme seu protótipo */
+    margin-top: 80px;
+}
+
+.cta-contact h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cta-contact h3 {
+    font-size: 24px;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* O link 'a' agora é o botão principal */
+.contact-button {
+    display: inline-block; /* Essencial para o transform e padding funcionarem */
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
+    color: #fff !important; /* Força a cor branca */
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none; /* REMOVE A LINHA EMBAIXO DO TEXTO */
+    
+    /* A transição deve estar no estado normal para ser suave na ida e na volta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.contact-button:hover {
+    text-decoration: none; /* Garante que a linha não apareça no hover */
+    transform: translateY(-5px); /* FAZ O BOTÃO SUBIR */
+    filter: brightness(1.1); /* Dá um leve brilho no gradiente */
+    box-shadow: 0 10px 20px rgba(115, 0, 255, 0.3); /* Sombra roxa sutil */
+}

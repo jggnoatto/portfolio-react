@@ -1,0 +1,132 @@
+/* --- RESET GLOBAL PARA O HEADER --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F8F8F8;
+    z-index: 2000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #F8F8F8;
+    position: relative;
+    box-sizing: border-box; /* ESSENCIAL: impede o corte do texto */
+    border-bottom: solid 2px rgba(115, 0, 255, 0.1);
+}
+
+.navbar .logo {
+    color: #7300FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+    white-space: nowrap; /* Impede o "Proje-tos" de quebrar */
+}
+
+.navbar .nav-links li a:hover {
+    color: #7300FF;
+}
+
+.navbar .contact {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    gap: 5px;
+    align-items: center;
+    font-weight: 500;
+}
+
+/* Classes de visibilidade */
+.mobile-only { display: none !important; }
+
+/* --- RESPONSIVIDADE --- */
+
+/* Ajuste para telas médias (evita o corte entre 769px e 1100px) */
+@media (max-width: 1100px) and (min-width: 769px) {
+    .navbar { padding: 20px 30px; }
+    .navbar .nav-links { gap: 15px; }
+}
+
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: block !important; }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu-trigger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #7300FF;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* DROPDOWN ESTILO CARD REDONDO */
+    .mobile-dropdown {
+        position: absolute;
+        top: 75px;
+        right: 20px;
+        width: 220px;
+        background-color: #FFFFFF;
+        border-radius: 25px; /* Bem redondo igual ao seu design */
+        padding: 25px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(115, 0, 255, 0.08);
+        z-index: 2001;
+    }
+
+    .mobile-dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mobile-dropdown ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .purple-arrow {
+        width: 14px;
+        /* Filtro para deixar a imagem da seta roxa se ela for preta */
+        filter: invert(16%) sepia(89%) saturate(6055%) hue-rotate(262deg) brightness(101%) contrast(106%);
+    }
+}

@@ -1,0 +1,117 @@
+/* --- ESTILOS GERAIS --- */
+.projects-container {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #F8F8F8;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.projects-display {
+    flex: 1;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column; /* Faz os dots do desktop ficarem abaixo do card */
+    align-items: center;
+    gap: 30px;
+}
+
+/* --- CARD --- */
+.project-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.project-name { font-weight: 700; font-size: 24px; color: #333; }
+.project-btn {
+    background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- NAVEGAÇÃO --- */
+.nav-arrow {
+    background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
+    color: white;
+    border: none;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.carousel-dots { display: flex; gap: 10px; align-items: center; }
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #d1d1d1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.dot.active {
+    background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* --- VISIBILIDADE --- */
+.mobile-only { display: none !important; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: flex !important; }
+
+    .carousel-wrapper {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .projects-display { width: 100%; }
+
+    .card-footer { flex-direction: column; gap: 15px; }
+
+    .project-name { font-size: 20px; }
+
+    /* Estilo da linha única de controles no Mobile */
+    .mobile-controls-wrapper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

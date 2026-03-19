@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Instrument Sans', sans-serif;
+    background-color: #F8F8F8;
+}
+/* Isso faz com que todo o site tenha scroll suave */
+html {
+  scroll-behavior: smooth;
+  /* Se o seu header for fixo, adicione um respiro para a seção não ficar colada no topo */
+  scroll-padding-top: 100px; 
+}
