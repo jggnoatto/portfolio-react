@@ -1,5 +1,5 @@
 import SectionTitle from "../SectionTitle/sectionTitle"
-import gradient1 from "../../assets/gradient1.svg";
+
 import "./aboutMe.css"
 
 export default function AboutMe() {
