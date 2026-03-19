@@ -77,4 +77,8 @@
         .side-line, .scroll-indicator {
             display: none;
         }
+
+        .home-content section {
+            margin-bottom: 0px; /* Reduz o espaçamento no mobile */
+        }
     }
