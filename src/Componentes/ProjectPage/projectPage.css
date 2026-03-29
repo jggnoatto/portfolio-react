@@ -1,4 +1,4 @@
-/* --- CONTAINER DA PÁGINA --- */
+
 .project-page {
     background-color: #F8F8F8;
     min-height: 100vh;
@@ -7,14 +7,12 @@
 
 
 .project-page-container {
-    /* Padding generoso para alinhar com a side-line de 80px */
     padding: 120px 170px 100px 220px; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column !important;
 }
 
-/* --- HEADER DO PROJETO (Título e Logo) --- */
 .project-header {
     display: flex;
     flex-direction: column;
@@ -44,7 +42,6 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* --- SEÇÃO SOBRE (TEXTO CENTRALIZADO) --- */
 .project-about {
     display: flex;
     flex-direction: column;
@@ -61,7 +58,6 @@
     margin: 25px auto 0;
 }
 
-/* --- CARROSSEL DE TELAS --- */
 .project-gallery-carousel {
     margin: 80px 0;
     width: 100%;
@@ -103,7 +99,6 @@
     display: block;
 }
 
-/* --- NAVEGAÇÃO (SETAS E DOTS) --- */
 .nav-arrow {
     display: flex;
     align-items: center;
@@ -150,7 +145,7 @@
     border-radius: 10px;
 }
 
-/* --- CONTROLES MOBILE --- */
+
 .mobile-controls-wrapper {
     display: none; /* Escondido no Desktop */
     align-items: center;
@@ -160,7 +155,6 @@
     margin-top: 30px;
 }
 
-/* --- VOLTAR --- */
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -178,11 +172,10 @@
     transform: translateX(-8px);
 }
 
-/* --- CLASSES DE VISIBILIDADE --- */
 .desktop-only { display: flex; }
 .mobile-only { display: none; }
 
-/* --- RESPONSIVIDADE (MOBILE) --- */
+
 @media (max-width: 1024px) {
     .project-page-container {
         padding: 100px 50px;
@@ -228,6 +221,6 @@
     }
 
     .mobile-controls-wrapper {
-        display: flex; /* Aparece apenas no mobile */
+        display: flex; 
     }
 }

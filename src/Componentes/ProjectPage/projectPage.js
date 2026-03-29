@@ -5,7 +5,7 @@ import ScrollReveal from "../ScrollReveal/scrollReveal";
 import CTAContact from "../CTAContact/ctaContact";
 import Header from "../Header/header";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Para manter as animações
+import { motion, AnimatePresence } from "framer-motion";
 import chevronLeft from "../../assets/chevron-left (1).svg";
 import chevronRight from "../../assets/chevron-right.svg";
 import arrowBack from "../../assets/arrow-return-left 1.png";
@@ -15,7 +15,6 @@ export default function ProjectPage() {
     const { id } = useParams();
     const project = projectsData.find((p) => p.id === id);
     
-    // Estado para controlar qual imagem da galeria está aparecendo
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
     useEffect(() => {
@@ -31,7 +30,6 @@ export default function ProjectPage() {
         );
     }
 
-    // Funções de navegação da galeria
     const nextImg = () => {
         setCurrentImgIndex((prev) => (prev + 1) % project.images.length);
     };
@@ -66,7 +64,7 @@ export default function ProjectPage() {
     <SectionTitle title="Principais telas" />
     
     <div className="carousel-wrapper">
-        {/* --- SETA ESQUERDA (DESKTOP) --- */}
+    
         <button className="nav-arrow desktop-only" onClick={prevImg}>
             <img src={chevronLeft} alt="Anterior" />
         </button>
@@ -90,7 +88,7 @@ export default function ProjectPage() {
                 </motion.div>
             </AnimatePresence>
 
-            {/* DOTS (DESKTOP) - Ficam embaixo do card no desktop */}
+
             <div className="carousel-dots desktop-only">
                 {project.images.map((_, index) => (
                     <span
@@ -102,12 +100,12 @@ export default function ProjectPage() {
             </div>
         </div>
 
-        {/* --- SETA DIREITA (DESKTOP) --- */}
+  
         <button className="nav-arrow desktop-only" onClick={nextImg}>
             <img src={chevronRight} alt="Próximo" />
         </button>
 
-        {/* --- CONTROLES MOBILE (Abaixo de tudo) --- */}
+
         <div className="mobile-controls-wrapper mobile-only">
             <button className="nav-arrow" onClick={prevImg}>
                 <img src={chevronLeft} alt="Anterior" />
