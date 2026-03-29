@@ -97,7 +97,7 @@ header {
         top: 75px;
         right: 20px;
         width: 220px;
-        background-color: #FFFFFF;
+        background-color: #F8F8F8;
         border-radius: 25px; /* Bem redondo igual ao seu design */
         padding: 25px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -126,7 +126,5 @@ header {
 
     .purple-arrow {
         width: 14px;
-        /* Filtro para deixar a imagem da seta roxa se ela for preta */
-        filter: invert(16%) sepia(89%) saturate(6055%) hue-rotate(262deg) brightness(101%) contrast(106%);
     }
 }

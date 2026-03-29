@@ -11,13 +11,13 @@ export default function Home() {
     return (
 
         <div className="home">
-            <ScrollReveal>
+           
                 <div className="side-line"></div>
                     <div className="scroll-indicator">
                     <p>ROLE PARA BAIXO</p>
                     <span className="scroll-arrow">↓</span>
                 </div>
-            </ScrollReveal>
+            
             
 
 

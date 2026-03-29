@@ -1,0 +1,233 @@
+/* --- CONTAINER DA PÁGINA --- */
+.project-page {
+    background-color: #F8F8F8;
+    min-height: 100vh;
+}
+
+
+
+.project-page-container {
+    /* Padding generoso para alinhar com a side-line de 80px */
+    padding: 120px 170px 100px 220px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column !important;
+}
+
+/* --- HEADER DO PROJETO (Título e Logo) --- */
+.project-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 40px;
+}
+
+.project-title {
+    font-size: 56px;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.project-logo {
+    width: 480px;
+    height: auto;
+    border-radius: 24px;
+    object-fit: contain;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(#fff, #fff) padding-box, 
+        linear-gradient(to right, #9c9a9a, #A55BFF) border-box;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --- SEÇÃO SOBRE (TEXTO CENTRALIZADO) --- */
+.project-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.project-description {
+    font-size: 19px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 750px;
+    margin: 25px auto 0;
+}
+
+/* --- CARROSSEL DE TELAS --- */
+.project-gallery-carousel {
+    margin: 80px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.projects-display {
+    flex: 1;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.project-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 30px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+.card-image-box img {
+    width: 100%;   
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- NAVEGAÇÃO (SETAS E DOTS) --- */
+.nav-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-arrow:hover {
+    transform: scale(1.1);
+}
+
+.nav-arrow img {
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
+    width: 28px;
+    border-radius: 10px;
+}
+
+/* --- CONTROLES MOBILE --- */
+.mobile-controls-wrapper {
+    display: none; /* Escondido no Desktop */
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* --- VOLTAR --- */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 60px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+.back-link:hover {
+    transform: translateX(-8px);
+}
+
+/* --- CLASSES DE VISIBILIDADE --- */
+.desktop-only { display: flex; }
+.mobile-only { display: none; }
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 1024px) {
+    .project-page-container {
+        padding: 100px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: flex !important; }
+
+    .project-page-container {
+        padding: 100px 20px;
+    }
+
+    .project-header {
+        text-align: center;
+        margin-bottom: 40px;
+        flex-direction: column;
+    }
+
+    .project-logo {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .project-title {
+        font-size: 36px;
+    }
+
+    .project-description {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .carousel-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .project-card {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .mobile-controls-wrapper {
+        display: flex; /* Aparece apenas no mobile */
+    }
+}

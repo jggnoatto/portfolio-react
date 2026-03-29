@@ -58,17 +58,40 @@
     border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
 }
+
+.project-btn:hover {
+    background-color: #a366ff;
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(139, 61, 255, 0.3);
+    transition: 0.3s ease-out;
+}
+    
 
 /* --- NAVEGAÇÃO --- */
 .nav-arrow {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
     background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
     color: white;
     border: none;
     width: 45px;
+    height: 45px;
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
+}
+
+.nav-arrow img {
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    color: thistle;
+    display: block;
+    pointer-events: none;
 }
 
 .carousel-dots { display: flex; gap: 10px; align-items: center; }

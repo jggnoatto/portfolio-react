@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionTitle from "../SectionTitle/sectionTitle";
+import chevronLeft from "../../assets/chevron-left (1).svg";
+import chevronRight from "../../assets/chevron-right.svg";
+import { Link } from "react-router-dom";
 import "./projectsSection.css";
 
 // Importes das imagens
@@ -9,9 +12,9 @@ import imgMetalbak from "../../assets/metalbank-capa.png";
 import imgLandingMetalBank from "../../assets/landing-page-metalbank-capa.png";
 
 const projects = [
-  { id: 1, title: "PREÇO CERTO", img: imgPrecoCerto, status: "Ver projeto →" },
-  { id: 2, title: "METALBANK", img: imgMetalbak, status: "Ver projeto →" },
-  { id: 3, title: "LANDING PAGE - METALBANK", img: imgLandingMetalBank, status: "Ver projeto →" },
+  { id: "preco-certo", title: "PREÇO CERTO", img: imgPrecoCerto, status: "Ver projeto →" },
+  { id: "metalbank", title: "METALBANK", img: imgMetalbak, status: "Ver projeto →" },
+  { id: "landing-page-metalbank", title: "LANDING PAGE - METALBANK", img: imgLandingMetalBank, status: "Ver projeto →" },
 ];
 
 export default function ProjectsSection() {
@@ -33,7 +36,7 @@ export default function ProjectsSection() {
         
         {/* --- VERSÃO DESKTOP --- */}
         {/* Setas nas laterais */}
-        <button className="nav-arrow desktop-only prev-arrow" onClick={prevProject}> ‹ </button>
+        <button className="nav-arrow desktop-only prev-arrow" onClick={prevProject}> <img src={chevronLeft} alt="Anterior" /> </button>
 
         <div className="projects-display">
           <AnimatePresence mode="wait">
@@ -51,7 +54,9 @@ export default function ProjectsSection() {
               
               <div className="card-footer">
                 <span className="project-name">{projects[currentIndex].title}</span>
-                <button className="project-btn">{projects[currentIndex].status}</button>
+                <Link to={`/project/${projects[currentIndex].id}`} className="project-btn">
+                  {projects[currentIndex].status}
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -68,13 +73,13 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        <button className="nav-arrow desktop-only next-arrow" onClick={nextProject}> › </button>
+        <button className="nav-arrow desktop-only next-arrow" onClick={nextProject}> <img src={chevronRight} alt="Próximo" /> </button>
 
 
         {/* --- VERSÃO MOBILE --- */}
         {/* Tudo agrupado em uma linha abaixo do card */}
         <div className="mobile-controls-wrapper mobile-only">
-            <button className="nav-arrow" onClick={prevProject}> ‹ </button>
+            <button className="nav-arrow" onClick={prevProject}> <img src={chevronLeft} alt="Anterior" /> </button>
             
             <div className="carousel-dots">
               {projects.map((_, index) => (
@@ -86,7 +91,7 @@ export default function ProjectsSection() {
               ))}
             </div>
 
-            <button className="nav-arrow" onClick={nextProject}> › </button>
+            <button className="nav-arrow" onClick={nextProject}> <img src={chevronRight} alt="Próximo" /> </button>
         </div>
 
       </div>
