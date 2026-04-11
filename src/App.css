@@ -1,15 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
+:root {
+  /* LIGHT THEME */
+  --bg-primary: #F8F8F8;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f1f1;
+  --text-primary: #333333;
+  --text-title: #000000;
+  --text-secondary: #555555;
+  --text-light: #7e7e7e;
+  --border-color: #e0e0e0;
+  --border-light: #eeeeee;
+  
+  --purple-primary: #7300FF;
+  --purple-secondary: #A55BFF;
+}
+
+[data-theme='dark'] {
+  /* DARK THEME */
+  --bg-primary: #121212;
+  --bg-card: #2a2a2a;
+  --bg-subtle: #333333;
+  --text-primary: #f1f1f1;
+  --text-title: #ffffff;
+  --text-secondary: #cccccc;
+  --text-light: #aaaaaa;
+  --border-color: #444444;
+  --border-light: #333333;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Instrument Sans', sans-serif;
-    background-color: #F8F8F8;
 }
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Isso faz com que todo o site tenha scroll suave */
 html {
   scroll-behavior: smooth;
-  /* Se o seu header for fixo, adicione um respiro para a seção não ficar colada no topo */
   scroll-padding-top: 100px; 
 }

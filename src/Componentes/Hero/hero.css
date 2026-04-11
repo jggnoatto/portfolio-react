@@ -7,7 +7,7 @@
 
 #hero h1{
     font-size: 45px;
-    color: #333;
+    color: var(--text-primary);
     margin-bottom: 20px;
     font-weight: 400;
 }
@@ -22,7 +22,7 @@ section p{
     margin-top: 10px;
     margin-bottom: 50px;
     font-size: 18px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 strong{
@@ -36,7 +36,7 @@ strong.non-bold{
 }
 
 .hero-subtitle{
-    color: #7e7e7e;
+    color: var(--text-light);
     font-size: 16px;
     margin-top: 20px;
 }
@@ -50,7 +50,7 @@ strong.non-bold{
     mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
-button {
+#hero button {
     padding: 12px 30px;
     background: linear-gradient(90deg, #7300FF 0%, #A55BFF 100%);
     color: #fff;
@@ -63,7 +63,7 @@ button {
     margin-top: -20px
 }
 
-button:hover {
+#hero button:hover {
     background-color: #a366ff;
     transform: translateY(-3px); 
     box-shadow: 0 10px 20px rgba(139, 61, 255, 0.3);
@@ -104,7 +104,7 @@ button:hover {
         order: 2; /* Garante que a imagem fique embaixo do texto */
     }
 
-    button {
+    #hero button {
         width: 100%; /* Botão full-width no mobile fica ótimo */
         max-width: 250px;
         margin-top: 0;

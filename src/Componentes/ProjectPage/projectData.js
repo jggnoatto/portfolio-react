@@ -27,11 +27,11 @@ import lpmb8 from '../../assets/lpmb-8.png';
 import lpmb9 from '../../assets/lpmb-9.png';
 import lpmb10 from '../../assets/lpmb-10.png';
 
-export const projectsData = [
+export const getProjectsData = (t) => [
     {
         id: "preco-certo",
         title: "Preço Certo",
-        description: "Projeto de e-commerce focado em oferecer uma experiência de compra rápida e intuitiva, com um design moderno e responsivo.",
+        description: t('projectData.precoCertoDesc'),
         logo: precoCertoLogo,
         images: [preco01, preco02, preco03, preco04, preco05, preco06, preco07, preco08]
     },
@@ -39,7 +39,7 @@ export const projectsData = [
     {
         id: "metalbank",
         title: "MetalBank",
-        description: "O MetalBank foi desenvolvido como um projeto acadêmico para o curso de Engenharia de Software na FAG, com o objetivo de simular a interface e a lógica de um sistema bancário moderno. Minha missão foi unir a formalidade e a segurança exigidas por instituições financeiras a uma usabilidade fluida e intuitiva. Durante o desenvolvimento, atuei como UI/UX Designer e desenvolvedor Front-End, focando na criação de uma interface limpa que prioriza as ações essenciais do usuário, como saques, depósitos e visualização de saldo.",
+        description: t('projectData.metalBankDesc'),
         logo: metalBankLogo,
         images: [mb1, mb2, mb3, mb4, mb5, mb6, mb7]
     },
@@ -47,7 +47,7 @@ export const projectsData = [
     {
         id: "landing-page-metalbank",
         title: "Landing Page MetalBank",
-        description: "Landing page criada para promover o projeto do MetalBank e apresentar suas funcionalidades e recursos, com um design moderno e focado em converter visitantes em leads.",
+        description: t('projectData.metalBankLpDesc'),
         logo: landingMetalBankLogo,
         images: [lpmb1, lpmb2, lpmb3, lpmb4, lpmb5, lpmb6, lpmb7, lpmb8, lpmb9, lpmb10]
     }

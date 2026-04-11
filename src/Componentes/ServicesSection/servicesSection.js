@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import SectionTitle from "../SectionTitle/sectionTitle";
 import "./servicesSection.css";
 
@@ -11,14 +12,18 @@ import imgMobile3 from "../../assets/interface-mobile3.png";
 import landingPage from "../../assets/landing-page-carousel.png";
 import webSystem from "../../assets/sistemas-web-carousel.png";
 
-const services = [
-  { id: 1, title: "Interfaces modernas", images: [imgDesktop], type: "desktop" },
-  { id: 2, title: "Interfaces mobile", images: [imgMobile1, imgMobile2, imgMobile3], type: "mobile" },
-  { id: 3, title: "Sistemas WEB", images: [webSystem], type: "desktop" },
-  { id: 4, title: "Landing Pages", images: [landingPage], type: "desktop" },
+// Movemos o array services para dentro do componente para podermos usar o hook useTranslation
+// ou criamos um componente/função que retorne a array com traduções
+const getServices = (t) => [
+  { id: 1, title: t('services.items.modern_interfaces'), images: [imgDesktop], type: "desktop" },
+  { id: 2, title: t('services.items.mobile_interfaces'), images: [imgMobile1, imgMobile2, imgMobile3], type: "mobile" },
+  { id: 3, title: t('services.items.web_systems'), images: [webSystem], type: "desktop" },
+  { id: 4, title: t('services.items.landing_pages'), images: [landingPage], type: "desktop" },
 ];
 
 export default function ServicesSection() {
+  const { t } = useTranslation();
+  const services = getServices(t);
   const [hoveredId, setHoveredId] = useState(null);
 
   // Fecha o card ao clicar fora no mobile
@@ -40,7 +45,7 @@ export default function ServicesSection() {
   return (
     <div className="services-section-container">
       <section id="servicos">
-        <SectionTitle title="Serviços" />
+        <SectionTitle title={t('services.title')} />
         
         <div className="services-grid">
           {services.map((service) => (

@@ -37,10 +37,18 @@
     font-size: 32px;
     font-weight: 700;
     margin: 0;
-    background: linear-gradient(90deg, #4b4b4b 0%, #7300ff 100%);
+    /* Efeito Animado com Cores Originais e Fluxo Contínuo */
+    background: linear-gradient(to right, #4b4b4b 0%, #7300ff 50%, #4b4b4b 100%);
+    background-size: 200% auto;
+    animation: rainbowShift 4s linear infinite;
+    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+@keyframes rainbowShift {
+    to { background-position: -200% center; }
 }
 
 .info-icon {
@@ -65,8 +73,8 @@
     left: 0; /* Alinha no início do texto no desktop */
     z-index: 100;
     width: 450px;
-    background-color: #2a2a2a !important; 
-    border: 1px solid #444;
+    background-color: var(--bg-card) !important; 
+    border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -74,7 +82,7 @@
 }
 
 .card-header {
-    color: #FFFFFF;
+    color: var(--text-primary);
     text-align: left;
     font-weight: 600;
     margin-bottom: 15px;
@@ -89,10 +97,10 @@
 .images-wrapper { display: flex; gap: 10px; background: transparent !important  }
 
 .image-frame {
-    border: 1px solid #444;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     overflow: hidden;
-    background-color: #000;
+    background-color: transparent;
     flex: 1;
     background: transparent !important;
 }

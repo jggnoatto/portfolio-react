@@ -4,7 +4,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #F8F8F8;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
     z-index: 2000;
 }
 
@@ -13,7 +14,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #F8F8F8;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
     position: relative;
     box-sizing: border-box; /* ESSENCIAL: impede o corte do texto */
     border-bottom: solid 2px rgba(115, 0, 255, 0.1);
@@ -37,7 +39,7 @@ header {
 
 .navbar .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-primary);
     font-weight: 500;
     transition: 0.3s;
     white-space: nowrap; /* Impede o "Proje-tos" de quebrar */
@@ -50,7 +52,7 @@ header {
 .navbar .contact {
     display: flex;
     text-decoration: none;
-    color: #000;
+    color: var(--text-title);
     gap: 5px;
     align-items: center;
     font-weight: 500;
@@ -58,6 +60,76 @@ header {
 
 /* Classes de visibilidade */
 .mobile-only { display: none !important; }
+
+/* LANG SWITCHER DESKTOP */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.language-switcher span {
+    color: var(--text-title);
+    font-weight: 600;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.language-switcher button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-title);
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.language-switcher button.active {
+    color: #7300FF;
+}
+
+.language-switcher button:hover {
+    transform: scale(1.15);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+.theme-toggle svg {
+    display: block;
+}
+.theme-toggle:hover {
+    transform: scale(1.15);
+}
 
 /* --- RESPONSIVIDADE --- */
 
@@ -97,7 +169,7 @@ header {
         top: 75px;
         right: 20px;
         width: 220px;
-        background-color: #F8F8F8;
+        background-color: var(--bg-card);
         border-radius: 25px; /* Bem redondo igual ao seu design */
         padding: 25px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -116,7 +188,7 @@ header {
 
     .mobile-dropdown ul li a {
         text-decoration: none;
-        color: #333;
+        color: var(--text-primary);
         font-weight: 600;
         font-size: 16px;
         display: flex;
@@ -126,5 +198,75 @@ header {
 
     .purple-arrow {
         width: 14px;
+    }
+
+    /* LANG SWITCHER MOBILE */
+    .language-switcher-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+        margin-bottom: 5px;
+        border-bottom: 1px solid var(--border-light);
+        padding-bottom: 15px;
+    }
+
+    .language-switcher-mobile span {
+        color: var(--text-title);
+        font-weight: 600;
+        user-select: none;
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+    }
+
+    .language-switcher-mobile button {
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, color 0.2s ease;
+        color: var(--text-title);
+        padding: 0;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+    }
+
+    .language-switcher-mobile button:hover {
+        transform: scale(1.15);
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .language-switcher-mobile button.active {
+        color: #7300FF;
+    }
+    
+    .separator {
+        color: var(--border-light) !important;
+        margin: 0 5px;
+    }
+    
+    .theme-toggle-mobile {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        color: inherit;
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+        transition: transform 0.3s;
+    }
+    .theme-toggle-mobile svg {
+        display: block;
+    }
+    .theme-toggle-mobile:hover {
+        transform: scale(1.15);
     }
 }

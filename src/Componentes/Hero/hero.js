@@ -1,15 +1,16 @@
 import heroImage from '../../assets/imagem-joao.png'
+import { useTranslation } from 'react-i18next';
 import "./hero.css"
 
 export default function Hero() {
+    const { t } = useTranslation();
     return (
         <div className="hero-container">
             <section id="hero">
-                    <h1>Projetando interfaces <br/><span className="bold">modernas</span> que <strong className="bold">impulsionam</strong> <br/>o <span className="bold">crescimento</span> do seu <br/>negócio<strong>.</strong></h1>
-                    <p className="hero-subtitle">Especialista na criação de interfaces de <strong className="non-bold">alta performance</strong> que conectam sua marca 
-                    ao público e transformam a presença digital da sua empresa em <strong className="non-bold">resultados reais</strong>.</p>
+                    <h1>{t('hero.title1')}<br/><span className="bold">{t('hero.title2')}</span>{t('hero.title3')}<strong className="bold">{t('hero.title4')}</strong> <br/>{t('hero.title5')}<span className="bold">{t('hero.title6')}</span>{t('hero.title7')}<strong>{t('hero.punctuation')}</strong></h1>
+                    <p className="hero-subtitle" dangerouslySetInnerHTML={{ __html: t('hero.subtitleHtml') }}></p>
                     <a href="#projects">
-                        <button>Ver Projetos</button>
+                        <button>{t('hero.viewProjects')}</button>
                     </a>
                     
             </section>

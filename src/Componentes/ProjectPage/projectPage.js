@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
-import { projectsData } from "./projectData";
+import { getProjectsData } from "./projectData";
 import SectionTitle from "../SectionTitle/sectionTitle";
 import ScrollReveal from "../ScrollReveal/scrollReveal";
 import CTAContact from "../CTAContact/ctaContact";
 import Header from "../Header/header";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import chevronLeft from "../../assets/chevron-left (1).svg";
 import chevronRight from "../../assets/chevron-right.svg";
@@ -12,7 +13,9 @@ import arrowBack from "../../assets/arrow-return-left 1.png";
 import "./projectPage.css";
 
 export default function ProjectPage() {
+    const { t } = useTranslation();
     const { id } = useParams();
+    const projectsData = getProjectsData(t);
     const project = projectsData.find((p) => p.id === id);
     
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -24,8 +27,8 @@ export default function ProjectPage() {
     if (!project) {
         return (
             <main className="project-page-container">
-                <h1>Projeto não encontrado</h1>
-                <Link to="/" className="back-link">Voltar para Home</Link>
+                <h1>{t('projectPage.notFound')}</h1>
+                <Link to="/" className="back-link">{t('projectPage.backToHome')}</Link>
             </main>
         );
     }
@@ -53,7 +56,7 @@ export default function ProjectPage() {
 
                 <ScrollReveal>
                     <section className="project-about">
-                        <SectionTitle title="Sobre o Projeto" />
+                        <SectionTitle title={t('projectPage.aboutProject')} />
                         <p className="project-description">{project.description}</p>
                     </section>
                 </ScrollReveal>
@@ -61,7 +64,7 @@ export default function ProjectPage() {
                 
                 <ScrollReveal>
                     <section className="project-gallery-carousel">
-    <SectionTitle title="Principais telas" />
+    <SectionTitle title={t('projectPage.mainScreens')} />
     
     <div className="carousel-wrapper">
     
@@ -135,7 +138,7 @@ export default function ProjectPage() {
                 
                 <ScrollReveal>
                     <Link to="/" className="back-link">
-                        Voltar para Home
+                        {t('projectPage.backToHome')}
                         <img src={arrowBack} alt="Voltar" />
                     </Link>
                 </ScrollReveal>
