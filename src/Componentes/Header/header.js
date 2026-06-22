@@ -65,7 +65,7 @@ export default function Header() {
                         {isDarkMode ? <SunIcon /> : <MoonIcon />}
                     </button>
                     
-                    <a className="contact" href="https://wa.me/...">
+                    <a className="contact" href="https://wa.me/5545998623546?text=Hello,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you.">
                         {t('header.contact')}
                         <img src={arrowUpRight} alt="Seta" />
                     </a>
