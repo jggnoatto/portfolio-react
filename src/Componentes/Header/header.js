@@ -101,7 +101,7 @@ export default function Header() {
                                 <li><a href="#servicos" onClick={() => setIsOpen(false)}>{t('header.services')}</a></li>
                                 <li><a href="#projects" onClick={() => setIsOpen(false)}>{t('header.projects')}</a></li>
                                 <li className="mobile-contact-item">
-                                    <a href="https://wa.me/..." onClick={() => setIsOpen(false)}>
+                                    <a href="https://wa.me/5545998623546?text=Olá,%20vi%20seu%20portfolio%20e%20gostaria%20de%20conversar." onClick={() => setIsOpen(false)}>
                                         {t('header.contact')}
                                         <img src={arrowUpRight} alt="" className="purple-arrow" />
                                     </a>
